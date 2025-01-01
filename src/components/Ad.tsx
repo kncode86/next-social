@@ -11,7 +11,7 @@ const Ad = ({size}:{size: "sm" | "md" | "lg" }) => {
 
             {/*BOTTOM*/}
             <div className={`flex flex-col mt-4 ${size === "sm" ? "gap-2" : "gap-4"}`}>
-                <div className={`relative w-full ${size === "sm" ? "24" : size === "md" ? "h-36" : "h-48"}`}>
+                <div className={`relative w-full ${size === "sm" ? "h-24" : size === "md" ? "h-36" : "h-48"}`}>
                     <Image 
                         src="https://images.pexels.com/photos/9143680/pexels-photo-9143680.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
                         alt=""
