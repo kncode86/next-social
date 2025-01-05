@@ -89,9 +89,7 @@ const UserInfoCard = async ({user}:{user:User}) => {
                         <Image src="/date.png" alt="" width={16} height={16} />
                         <span>Joined {formattedDate}</span>
                     </div>
-                </div>
-                {/* <button className="bg-blue-500 text-white text-sm rounded-md p-2">Follow</button>
-                <span className="text-red-400 self-end text-xs cursor-pointer">Block User</span> */}
+                </div>               
 
                 <UserInfoCardIntercation 
                     userId={user.id}
