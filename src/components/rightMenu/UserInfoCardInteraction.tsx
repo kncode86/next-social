@@ -1,16 +1,14 @@
 "use client"
 
-import { switchFollow } from "@/lib/actions";
+import { switchBlock, switchFollow } from "@/lib/actions";
 import { useState } from "react";
 
-const UserInfoCardIntercation = ({
-    currentUserId,
+const UserInfoCardInteraction = ({
     userId,
     isUserBlocked,
     isFollowing,
     isFollowingSent
 }:{
-    currentUserId:string | null;
     userId:string;
     isUserBlocked:boolean;
     isFollowing:boolean;
@@ -31,7 +29,19 @@ const UserInfoCardIntercation = ({
                 followingRequestSent: !prev.following && !prev.followingRequestSent ? true : false,
             }));
         } catch (error) {
-            
+            console.log(error)
+        }
+    }
+
+    const block = async () => {
+        try {
+            await switchBlock(userId);
+            setUserState(prev => ({
+                ...prev,
+                blocked: !prev.blocked
+            }));
+        } catch (error) {
+            console.log(error)
         }
     }
 
@@ -46,13 +56,15 @@ const UserInfoCardIntercation = ({
                     : "Follow"}
                 </button>
             </form>
-            <form action="" className="self-end">
-                <span className="text-red-400 text-xs cursor-pointer">
+            <form action={block} className="self-end">
+                <button>
+                     <span className="text-red-400 text-xs cursor-pointer">
                         {userState.blocked? "Unblock User" : "Block User"}
                     </span>
+                </button>          
             </form>        
         </>
     )
 }
 
-export default UserInfoCardIntercation;
+export default UserInfoCardInteraction;

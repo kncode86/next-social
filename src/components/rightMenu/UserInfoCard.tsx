@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import UserInfoCardIntercation from "./UserInfoCardInteraction";
+import UserInfoCardInteraction from "./UserInfoCardInteraction";
 
 const UserInfoCard = async ({user}:{user:User}) => {
 
@@ -91,9 +91,8 @@ const UserInfoCard = async ({user}:{user:User}) => {
                     </div>
                 </div>               
 
-                <UserInfoCardIntercation 
+                <UserInfoCardInteraction 
                     userId={user.id}
-                    currentUserId={currentUserId}
                     isUserBlocked={isUserBlocked}
                     isFollowing={isFollowing}
                     isFollowingSent={isFollowingSent}
