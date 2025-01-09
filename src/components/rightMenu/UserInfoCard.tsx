@@ -66,9 +66,9 @@ const UserInfoCard = async ({user}:{user:User}) => {
             <div className="flex flex-col gap-4 text-gray-500">
                 <div className="flex items-center gap-2">
                     <span className="text-xl text-black">
-                    {user.name && user.surname
-                        ? user.name + " " + user.surname
-                        : user.username}
+                        {user.name && user.surname
+                            ? user.name + " " + user.surname
+                            : user.username}
                     </span>
                     <span className="text-sm">@{user.username}</span>
                 </div>
