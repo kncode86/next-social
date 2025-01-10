@@ -64,7 +64,9 @@ const PostInteraction = ({
                         className="cursor-pointer" 
                     />
                     <span className="text-gray-300">|</span>
-                    <span className="text-gray-500">123<span className="hidden md:inline"> Comments</span></span>
+                    <span className="text-gray-500">
+                        {commentNumber}<span className="hidden md:inline"> Comments</span>
+                    </span>
                 </div>
             </div>
             <div>
