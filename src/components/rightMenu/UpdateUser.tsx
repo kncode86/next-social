@@ -35,8 +35,8 @@ const UpdateUser = ({user}:{user:User}) => {
                     <div className="mt-4 text-xs text-gray-500">
                         Use the navbar profile to change the avatar or username.
                     </div>
+                    
                     {/*COVER PICTURE UPLOAD*/}
-
                     <CldUploadWidget 
                         uploadPreset="social" 
                         onSuccess={(result) => setCover(result.info)}
